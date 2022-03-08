@@ -1,0 +1,18 @@
+@use "../variables" as *;
+
+.header {
+  // background-image: var(--light-background-image-mobile);
+  background-image: var(--image-mobile);
+  // background-image: url("../images/bg-mobile-light.jpg");
+
+  // background-repeat: no-repeat;
+  height: 20rem;
+
+  &-container {
+    padding: 50px;
+    h1 {
+      color: var(--check-background);
+      font-size: 2rem;
+    }
+  }
+}

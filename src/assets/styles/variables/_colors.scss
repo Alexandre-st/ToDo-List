@@ -9,6 +9,8 @@
   --light-grayish-blue: hsl(233, 11%, 84%);
   --dark-grayish-blue: hsl(236, 9%, 61%);
   --very-dark-grayish-blue: hsl(235, 19%, 35%);
+  --image-mobile: url("/src/assets/images/bg-mobile-light.jpg");
+  // --image-desktop: url(../images/bg-desktop-light.jpg);
 
   // Dark color
   --very-dark-blue: hsl(235, 21%, 11%);
@@ -20,5 +22,12 @@
   --very-dark-grayish-blue-hover: hsl(237, 14%, 26%);
 }
 
-.dark {
-}
+// .dark {
+// }
+
+// header {
+//   background-image: var(--image-mobile);
+//   background-repeat: no-repeat;
+//
+// height: 20rem;
+// }
