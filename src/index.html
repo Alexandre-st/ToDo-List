@@ -6,13 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/styles/index.scss">
+  <script>
+    
+  </script>
   <title>ToDo list</title>
 </head>
 <body>
   <header class="header">
     <div class="header-container">
-      <h1>TODO</h1>
-      
+      <h1 class="header-container-title">TODO</h1>
+      <div class="header-container-toggle">
+        <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox">
+          <div class="slider">
+            <img class="slider-moon" src="./assets/images/icon-moon.svg" alt="Moon">
+            <img class="slider-sun" src="./assets/images/icon-sun.svg" alt="Sun">
+          </div>
+        </label>
+      </div>
     </div>
   </header> 
   <main>
@@ -28,5 +39,7 @@
   <footer>
     <p>Drag and drop to reorder list</p>
   </footer>
+
+  <script type="module" src="./index.js"></script>
 </body>
 </html>

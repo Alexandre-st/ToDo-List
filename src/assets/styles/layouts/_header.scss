@@ -1,18 +1,59 @@
 @use "../variables" as *;
 
 .header {
-  // background-image: var(--light-background-image-mobile);
-  background-image: var(--image-mobile);
-  // background-image: url("../images/bg-mobile-light.jpg");
-
-  // background-repeat: no-repeat;
+  background-image: var(--bg-image);
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 20rem;
 
   &-container {
-    padding: 50px;
-    h1 {
-      color: var(--check-background);
-      font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4.8rem 2.4rem 0 2.6rem;
+
+    &-title {
+      color: var(--title-color);
+      font-size: 2.5rem;
+      letter-spacing: 1rem;
+      font-weight: 700;
     }
+  }
+}
+
+// THEME SWITCH
+.theme-switch {
+  display: inline-block;
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+
+  input {
+    display: none;
+
+    &:checked + .slider .slider-moon {
+      opacity: 1;
+    }
+
+    &:checked + .slider .slider-sun {
+      opacity: 0;
+    }
+  }
+}
+
+.slider {
+  cursor: pointer;
+  display: flex;
+
+  img {
+    position: absolute;
+  }
+
+  &-moon {
+    opacity: 0;
+  }
+
+  &-sun {
+    opacity: 1;
   }
 }
