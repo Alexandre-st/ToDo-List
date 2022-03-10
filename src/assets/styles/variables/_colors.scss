@@ -23,15 +23,16 @@
   // color: #111;
 
   --bg-image: url("/src/assets/images/bg-mobile-dark.jpg");
-  --bg-color: #fafafa;
-  --title-color: #ffffff;
+  --bg-color: #171823;
+  --bg-list: #25273d;
+  --label-color: #767992;
+  --circle-color: #393a4b;
 }
-
-// .dark {
-//   --image-mobile: url("/src/assets/images/bg-mobile-dark.jpg");
-// }
 
 [data-theme="light"] {
   --bg-image: url("/src/assets/images/bg-mobile-light.jpg");
-  --bg-color: #171823;
+  --bg-color: #fafafa;
+  --bg-list: #ffffff;
+  --label-color: #9495a5;
+  --circle-color: #e3e4f1;
 }

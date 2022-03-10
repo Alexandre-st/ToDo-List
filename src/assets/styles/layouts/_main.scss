@@ -1,0 +1,42 @@
+.container {
+  padding: 0 2.4rem;
+  margin-top: -10rem;
+}
+
+.form {
+  max-width: 54rem;
+
+  &-label {
+    visibility: hidden;
+  }
+
+  .form-content {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    height: 4.8rem;
+    background-color: var(--bg-list);
+    width: 100%;
+    padding-left: 2rem;
+    border-radius: 5px;
+    box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+    width: 100%;
+
+    &-circle {
+      width: 2rem;
+      height: 2rem;
+      border: 1px solid var(--circle-color);
+      border-radius: 50%;
+    }
+
+    &-input {
+      &::placeholder,
+      &:focus {
+        color: var(--label-color);
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+        letter-spacing: -0.166667px;
+      }
+    }
+  }
+}
