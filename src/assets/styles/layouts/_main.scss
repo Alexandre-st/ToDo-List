@@ -3,8 +3,10 @@
   margin-top: -10rem;
 }
 
+// Design for the form
 .form {
   max-width: 54rem;
+  margin-bottom: 1.6rem;
 
   &-label {
     visibility: hidden;
@@ -39,4 +41,35 @@
       }
     }
   }
+}
+
+// Design for the list
+.list {
+  background-color: var(--bg-list);
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  border-radius: 5px;
+
+  &-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 1.2rem;
+    height: 4.8rem;
+    padding-left: 2rem;
+    border-bottom: 1px solid var(--border-bottom);
+    color: var(--text-color);
+
+    // input {
+    //   // display: none;
+    //   opacity: 0;
+    // }
+  }
+
+  // &-check {
+  //   // position: absolute;
+  //   width: 2rem;
+  //   height: 2rem;
+  //   border: 1px solid var(--circle-color);
+  //   border-radius: 50%;
+  // }
 }

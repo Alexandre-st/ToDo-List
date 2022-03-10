@@ -1,32 +1,11 @@
 :root {
-  // Primary Color
-  // --bright-blue: hsl(220, 98%, 61%);
-  // --check-background: hsl(192, 100%, 67%) to hsl(280, 87%, 65%); // Linear gradient
-
-  // // Light Color
-  // --very-light-gray: hsl(0, 0%, 98%);
-  // --very-light-grayish-blue: hsl(236, 33%, 92%);
-  // --light-grayish-blue: hsl(233, 11%, 84%);
-  // --dark-grayish-blue: hsl(236, 9%, 61%);
-  // --very-dark-grayish-blue: hsl(235, 19%, 35%);
-  // --image-mobile: url("/src/assets/images/bg-mobile-light.jpg");
-  // --image-desktop: url(../images/bg-desktop-light.jpg);
-
-  // Dark color
-  // --very-dark-blue: hsl(235, 21%, 11%);
-  // --very-dark-desaturated-blue: hsl(235, 24%, 19%);
-  // --light-grayish-blue: hsl(234, 39%, 85%);
-  // --light-grayish-blue-hover: hsl(236, 33%, 92%);
-  // --dark-grayish-blue: hsl(234, 11%, 52%);
-  // --very-dark-grayish-blue: hsl(233, 14%, 35%);
-  // --very-dark-grayish-blue-hover: hsl(237, 14%, 26%);
-  // color: #111;
-
   --bg-image: url("/src/assets/images/bg-mobile-dark.jpg");
   --bg-color: #171823;
   --bg-list: #25273d;
   --label-color: #767992;
   --circle-color: #393a4b;
+  --text-color: #c8cbe7;
+  --border-bottom: #393a4b;
 }
 
 [data-theme="light"] {
@@ -35,4 +14,6 @@
   --bg-list: #ffffff;
   --label-color: #9495a5;
   --circle-color: #e3e4f1;
+  --text-color: #494c6b;
+  --border-bottom: #e3e4f1;
 }
