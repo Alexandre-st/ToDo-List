@@ -2,3 +2,10 @@
   font-size: 10px;
   font-family: "Josefin Sans", sans-serif;
 }
+
+.circle {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--circle-color);
+  border-radius: 50%;
+}

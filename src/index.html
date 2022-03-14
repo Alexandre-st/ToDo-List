@@ -33,7 +33,7 @@
       <form class="form">
         <label class="form-label" for="item">Create a new todo…</label>
         <div class="form-content">
-          <div class="form-content-circle"></div>
+          <div class="form-content-circle circle"></div>
           <input 
             class="form-content-input" type="text" id="item" placeholder="Create a new todo…" autocomplete="off"
           >
@@ -41,8 +41,14 @@
       </form>
 
       <ul class="list" id="sortlist">
-        <li class="list-item">Everybody is fine</li>
-        <li class="list-item">Let's go</li>
+        <li class="list-item">
+          <div class="circle"></div>
+          <p>Everybody is fine</p> 
+        </li>
+        <li class="list-item">
+          <div class="circle"></div>
+          <p> Let's go !</p>
+        </li>
       </ul>
     </div>
   </main>

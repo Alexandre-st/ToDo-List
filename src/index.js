@@ -5,11 +5,11 @@ const list = document.querySelector('ul');
 const input = document.querySelector('form input');
 let allTask = [];
 
-//
+// To add a new task in the to do
 form.addEventListener('submit', evt => {
   evt.preventDefault();
 
-  // Get the text, clean the white spaces an clear the input
+  // Get the text, clean the white spaces an clear the input after the submit
   const text = input.value.trim();
   if (text !== '') {
     addTask(text);
@@ -23,9 +23,8 @@ const addTask = (text) => {
     text,
     id : Date.now(),
   }
-  // When the task is create, call the function to show the list
+  // When the task is created, call the function to show the list
   showList(todo);
-
 };
 
 const showList = (todo) => {
@@ -34,24 +33,36 @@ const showList = (todo) => {
   item.classList.add('list-item');
   item.setAttribute('data-key', todo.id);
 
-  // Create the checkbox
+  // Create the checkbox with label to hide the checkbox
+  const label = document.createElement('label');
+  label.classList.add('list-check');
+  label.setAttribute('for', 'taskDone');
+  item.appendChild(label);
+  
+  // Create the input with checkbox type
   const checkbox = document.createElement('input');
   checkbox.setAttribute('type', 'checkbox');
-  checkbox.classList.add('list-check');
-  input.addEventListener('click', taskDone);
-  item.appendChild(checkbox);
+  checkbox.setAttribute('id', 'taskDone');
+  checkbox.addEventListener('click', taskDone);
+  label.appendChild(checkbox);
+  
+  // Create the circle who is replacing the checkbox
+  const circle = document.createElement('div');
+  circle.classList.add('circle');
+  label.appendChild(circle);
   
   // Add the text
-  const txt = document.createElement('p');
-  txt.innerText = todo.text;
-  item.appendChild(txt);
+  const text = document.createElement('p');
+  text.innerText = todo.text;
+  item.appendChild(text);
   
   list.appendChild(item);
   allTask.push(item);
 };
 
+// To mark a task as complete
 const taskDone = (evt) => {
-  evt.target.parentNode.classList.toggle('taskDone');
+  evt.target.parentNode.parentNode.classList.toggle('taskDone');
 };
 
 // To switch theme based on the if the theme toggle is checked or not
