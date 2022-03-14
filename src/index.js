@@ -3,6 +3,7 @@ const themeToggle = document.querySelector('.theme-switch input[type="checkbox"]
 const form = document.querySelector('form');
 const list = document.querySelector('ul');
 const input = document.querySelector('form input');
+const image = './assets/images/icon-cross.svg';
 let allTask = [];
 
 // To add a new task in the to do
@@ -53,7 +54,22 @@ const showList = (todo) => {
   const text = document.createElement('p');
   text.innerText = todo.text;
   item.appendChild(text);
+
+  // Button to delete the task
+  const button = document.createElement('button');
+  button.classList.add('list-item-cross');
+  button.addEventListener('click', deleteTask);
+
+  // Create the image to execute the function to delete the task
+  const img = document.createElement('img');
+  img.src = "./assets/images/icon-cross.svg";
+  img.setAttribute("alt", 'cross');
+  // img.setAttribute('src', './assets/images/icon-cross.svg');
+  button.appendChild(img);
+  item.appendChild(button);
   
+  //TODO : Il faut que je puisse créer l'image pour supprimer MAIS faut le cacher pour uniquement le faire apparaitre au hover sur le li. 
+  //TODO : Cela me permettre de créer une nouvelle fonction mouseover.
   // Push to the allTask array.
   list.appendChild(item);
   allTask.push(item);
@@ -62,6 +78,16 @@ const showList = (todo) => {
 // To mark a task as complete
 const taskDone = (evt) => {
   evt.target.parentNode.parentNode.classList.toggle('taskDone');
+};
+
+// To delete a task
+const deleteTask = (evt) => {
+  allTask.forEach(elt => {
+    if (evt.target.parentNode.getAttribute('data-key') === elt.getAttribute('data-key')) {
+      elt.remove();
+      allTask = allTask.filter(li => li.dataset.key !== elt.dataset.key);
+    }
+  });
 };
 
 // To switch theme based on the if the theme toggle is checked or not

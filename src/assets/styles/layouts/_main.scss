@@ -51,6 +51,13 @@
     padding-left: 2rem;
     border-bottom: 1px solid var(--border-bottom);
     color: var(--text-color);
+
+    &-cross {
+      margin-left: auto;
+      width: 18px;
+      height: 18px;
+      margin-right: 24px;
+    }
   }
 
   .taskDone p {
@@ -63,12 +70,27 @@
     width: 2rem;
     height: 2rem;
 
+    //TODO :
+    &-hover {
+      cursor: pointer;
+      border: 1px solid linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
+    }
+
     input {
       display: none;
     }
   }
 }
 
-li.taskDone p {
-  text-decoration: line-through;
+li.taskDone {
+  p {
+    text-decoration: line-through;
+  }
+
+  .circle {
+    background: url("/src/assets/images/icon-check.svg"),
+      linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }
