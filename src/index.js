@@ -3,7 +3,6 @@ const themeToggle = document.querySelector('.theme-switch input[type="checkbox"]
 const form = document.querySelector('form');
 const list = document.querySelector('ul');
 const input = document.querySelector('form input');
-const image = './assets/images/icon-cross.svg';
 let allTask = [];
 
 // To add a new task in the to do
@@ -61,15 +60,12 @@ const showList = (todo) => {
   button.addEventListener('click', deleteTask);
 
   // Create the image to execute the function to delete the task
-  const img = document.createElement('img');
-  img.src = "./assets/images/icon-cross.svg";
-  img.setAttribute("alt", 'cross');
-  // img.setAttribute('src', './assets/images/icon-cross.svg');
-  button.appendChild(img);
+  const image = document.createElement('img');
+  image.setAttribute('src', '/src/assets/images/icon-cross.svg');
+  image.setAttribute('alt', 'Cross');
+  button.appendChild(image);
   item.appendChild(button);
-  
-  //TODO : Il faut que je puisse créer l'image pour supprimer MAIS faut le cacher pour uniquement le faire apparaitre au hover sur le li. 
-  //TODO : Cela me permettre de créer une nouvelle fonction mouseover.
+
   // Push to the allTask array.
   list.appendChild(item);
   allTask.push(item);

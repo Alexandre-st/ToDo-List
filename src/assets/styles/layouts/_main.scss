@@ -39,7 +39,7 @@
 // Design for the list
 .list {
   background-color: var(--bg-list);
-  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  box-shadow: 0px 35px 50px -15px var(--shadow);
   border-radius: 5px;
 
   &-item {
@@ -51,6 +51,10 @@
     padding-left: 2rem;
     border-bottom: 1px solid var(--border-bottom);
     color: var(--text-color);
+
+    &:last-child {
+      border-bottom: none;
+    }
 
     &-cross {
       margin-left: auto;
