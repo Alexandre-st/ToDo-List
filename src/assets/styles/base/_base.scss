@@ -8,8 +8,13 @@ body {
 }
 
 .circle {
+  cursor: pointer;
   width: 2rem;
   height: 2rem;
   border: 1px solid var(--circle-color);
   border-radius: 50%;
+
+  //TODO
+  // &:hover {
+  // }
 }

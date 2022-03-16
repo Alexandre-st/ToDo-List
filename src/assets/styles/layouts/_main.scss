@@ -21,7 +21,7 @@
     width: 100%;
     padding-left: 2rem;
     border-radius: 5px;
-    box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 35px 50px -15px var(--shadow);
     width: 100%;
 
     &-input {
@@ -51,21 +51,20 @@
     padding-left: 2rem;
     border-bottom: 1px solid var(--border-bottom);
     color: var(--text-color);
-
-    &:last-child {
-      border-bottom: none;
-    }
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    letter-spacing: -0.166667px;
 
     &-cross {
       margin-left: auto;
       width: 18px;
       height: 18px;
       margin-right: 24px;
-    }
-  }
 
-  .taskDone p {
-    text-decoration: line-through;
+      img {
+        pointer-events: none;
+      }
+    }
   }
 
   &-check {
@@ -73,12 +72,6 @@
     position: relative;
     width: 2rem;
     height: 2rem;
-
-    //TODO :
-    &-hover {
-      cursor: pointer;
-      border: 1px solid linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
-    }
 
     input {
       display: none;
@@ -89,6 +82,7 @@
 li.taskDone {
   p {
     text-decoration: line-through;
+    color: #d1d2da;
   }
 
   .circle {
@@ -96,5 +90,54 @@ li.taskDone {
       linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
     background-position: center;
     background-repeat: no-repeat;
+  }
+}
+
+.filter {
+  padding: 0 2.4rem;
+  color: var(--button-color);
+  margin-top: 1.6rem;
+  box-shadow: 0px 35px 50px -15px var(--shadow);
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.194444px;
+
+  &-content {
+    max-width: 54rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-list);
+    height: 4.8rem;
+    gap: 1.9rem;
+    box-shadow: 0px 35px 50px -15px var(--shadow);
+    border-radius: 5px;
+
+    button:hover {
+      color: #3a7cfd;
+    }
+  }
+}
+
+.action {
+  background-color: var(--bg-list);
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0px 35px 50px -15px var(--shadow);
+
+  &-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    letter-spacing: -0.166667px;
+    padding: 0 2rem;
+    color: var(--button-color);
+    height: 5rem;
+  }
+
+  &-h2 {
+    cursor: pointer;
   }
 }

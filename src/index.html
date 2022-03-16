@@ -37,6 +37,7 @@
           <input 
             class="form-content-input" type="text" id="item" placeholder="Create a new todo…" autocomplete="off"
           >
+          <!-- <button type="submit">Create</button> -->
         </div>
       </form>
 
@@ -62,10 +63,26 @@
           </button>
         </li>
       </ul>
+
+      <div class="action">
+        <div class="action-mobile">
+          <p class="action-p"></p>
+          <h2 class="action-h2">Clear Completed</h2>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="filter">
+      <div class="filter-content">
+        <button>All</button>
+        <button>Active</button>
+        <button>Completed</button>
+      </div>
     </div>
   </main>
-  <footer>
-    <p>Drag and drop to reorder list</p>
+  <footer class="footer">
+    <p class="footer-p">Drag and drop to reorder list</p>
   </footer>
 
   <script type="module" src="./index.js"></script>
