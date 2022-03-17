@@ -1,0 +1,8 @@
+// To setup Media Queries
+@mixin mq($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+}

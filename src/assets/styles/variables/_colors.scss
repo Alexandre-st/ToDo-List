@@ -1,5 +1,6 @@
 :root {
   --bg-image: url("/src/assets/images/bg-mobile-dark.jpg");
+  --bg-image-desktop: url("/src/assets/images/bg-desktop-dark.jpg");
   --bg-color: #171823;
   --bg-list: #25273d;
   --shadow: rgba(0, 0, 0, 0.5);
@@ -12,6 +13,7 @@
 
 [data-theme="light"] {
   --bg-image: url("/src/assets/images/bg-mobile-light.jpg");
+  --bg-image-desktop: url("/src/assets/images/bg-desktop-light.jpg");
   --bg-color: #fafafa;
   --bg-list: #ffffff;
   --shadow: #c2c3d680;

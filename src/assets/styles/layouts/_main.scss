@@ -1,6 +1,8 @@
+@use "../variables" as *;
+
 // Design for the form
 .form {
-  max-width: 54rem;
+  max-width: 64rem;
   margin-bottom: 1.6rem;
 
   &-label {
@@ -18,6 +20,10 @@
     border-radius: 5px;
     box-shadow: 0px 35px 50px -15px var(--shadow);
     width: 100%;
+
+    @include mq(tablet) {
+      height: 6.4rem;
+    }
 
     &-input {
       &::placeholder,
@@ -51,6 +57,10 @@
     font-size: 1.2rem;
     line-height: 1.2rem;
     letter-spacing: -0.166667px;
+
+    @include mq(tablet) {
+      height: 6.4rem;
+    }
 
     &-cross {
       margin-left: auto;
@@ -97,6 +107,9 @@ li.taskDone {
   letter-spacing: -0.194444px;
   color: var(--button-color);
   box-shadow: 0px 35px 50px -15px var(--shadow);
+  @include mq(tablet) {
+    display: none;
+  }
 
   &-content {
     display: flex;
