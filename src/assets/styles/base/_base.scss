@@ -7,6 +7,13 @@ body {
   background-color: var(--bg-color);
 }
 
+.container {
+  max-width: 54rem;
+  padding: 0 2.4rem;
+  margin: auto;
+  margin-top: -10rem;
+}
+
 .circle {
   cursor: pointer;
   width: 2rem;

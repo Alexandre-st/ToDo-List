@@ -93,11 +93,11 @@ const deleteTask = (evt) => {
 };
 
 // To show how many task
-const showItems = () => {
+const showItems = (item) => {
   if (list.getElementsByTagName('li').length <= 1) {
-    itemsNumber.innerText = `${list.getElementsByTagName('li').length} item`;
+    itemsNumber.innerText = `${list.getElementsByTagName('li').length} item left`;
   } else {
-    itemsNumber.innerText = `${list.getElementsByTagName('li').length} items`;
+    itemsNumber.innerText = `${list.getElementsByTagName('li').length} items left`;
   }
 };
 

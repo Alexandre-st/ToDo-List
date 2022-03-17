@@ -10,6 +10,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 54rem;
+    margin: auto;
     padding: 4.8rem 2.4rem 0 2.6rem;
 
     &-title {
