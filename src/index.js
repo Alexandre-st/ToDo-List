@@ -3,7 +3,7 @@ const themeToggle = document.querySelector('.theme-switch input[type="checkbox"]
 const form = document.querySelector('form');
 const list = document.querySelector('ul');
 const input = document.querySelector('form input');
-const completed = document.querySelector('.action-h2');
+const completedTask = document.querySelector('.action-h2');
 const itemsNumber = document.querySelector('.action-p');
 let allTask = [];
 
@@ -104,7 +104,7 @@ const showItems = (item) => {
 showItems();
 
 // To delete all the tasks who are marked as completed
-completed.addEventListener('click', evt => {
+completedTask.addEventListener('click', evt => {
   evt.preventDefault();
   allTask.forEach(elt => {
     if (elt === document.querySelector('.taskDone')) {

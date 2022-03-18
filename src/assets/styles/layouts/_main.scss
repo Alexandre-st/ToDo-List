@@ -15,23 +15,30 @@
     gap: 1.2rem;
     height: 4.8rem;
     background-color: var(--bg-list);
-    width: 100%;
     padding-left: 2rem;
     border-radius: 5px;
     box-shadow: 0px 35px 50px -15px var(--shadow);
-    width: 100%;
 
     @include mq(tablet) {
       height: 6.4rem;
+      gap: 2.4rem;
     }
 
     &-input {
+      width: 90%;
+      height: 100%;
+
       &::placeholder,
       &:focus {
         color: var(--label-color);
         font-size: 1.2rem;
         line-height: 1.2rem;
         letter-spacing: -0.166667px;
+        @include mq(tablet) {
+          font-size: 1.8rem;
+          line-height: 1.8rem;
+          letter-spacing: -0.25px;
+        }
       }
     }
   }
@@ -60,6 +67,10 @@
 
     @include mq(tablet) {
       height: 6.4rem;
+      gap: 2.4rem;
+      font-size: 1.8rem;
+      line-height: 1.8rem;
+      letter-spacing: -0.25px;
     }
 
     &-cross {
@@ -99,6 +110,7 @@ li.taskDone {
   }
 }
 
+// Design for button (All / Active / Completed)
 .filter {
   margin-top: 1.6rem;
   font-size: 1.4rem;
@@ -107,6 +119,7 @@ li.taskDone {
   letter-spacing: -0.194444px;
   color: var(--button-color);
   box-shadow: 0px 35px 50px -15px var(--shadow);
+
   @include mq(tablet) {
     display: none;
   }
@@ -137,6 +150,21 @@ li.taskDone {
     padding: 0 2rem;
     color: var(--button-color);
     height: 5rem;
+
+    @include mq(tablet) {
+      font-size: 1.4rem;
+      line-height: 1.4rem;
+      letter-spacing: -0.194444px;
+    }
+  }
+
+  &-desktop {
+    display: none;
+
+    @include mq(tablet) {
+      display: block;
+      font-weight: 700;
+    }
   }
 
   &-h2 {

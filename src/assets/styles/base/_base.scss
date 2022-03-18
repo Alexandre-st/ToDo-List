@@ -1,3 +1,5 @@
+@use "../variables" as *;
+
 :root {
   font-size: 10px;
   font-family: "Josefin Sans", sans-serif;
@@ -12,6 +14,10 @@ body {
   padding: 0 2.4rem;
   margin: auto;
   margin-top: -10rem;
+
+  @include mq(tablet) {
+    margin-top: -15rem;
+  }
 }
 
 .circle {
@@ -20,6 +26,11 @@ body {
   height: 2rem;
   border: 1px solid var(--circle-color);
   border-radius: 50%;
+
+  @include mq(tablet) {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
 
   //TODO
   // &:hover {
