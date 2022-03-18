@@ -4,6 +4,9 @@ const form = document.querySelector('form');
 const list = document.querySelector('ul');
 const input = document.querySelector('form input');
 const completedTask = document.querySelector('.action-h2');
+const allFilter = document.querySelector('.filter-content .all');
+const activeFilter = document.querySelector('.active');
+const completedFilter = document.querySelector('completed');
 const itemsNumber = document.querySelector('.action-p');
 let allTask = [];
 
@@ -33,6 +36,8 @@ const addTask = (text) => {
 const showList = (todo) => {
   // Create the li (item)
   const item = document.createElement('li');
+  // To let the item draggable
+  item.draggable = true;
   item.classList.add('list-item');
   item.setAttribute('data-key', todo.id);
 
@@ -73,6 +78,58 @@ const showList = (todo) => {
   list.appendChild(item);
   allTask.push(item);
   showItems();
+
+  let items = document.getElementsByTagName('li'), current = null;
+  // 1 - Make item draggable + sortable
+  for (let item of items) {
+    item.draggable = true;
+
+    // 2 - Drag start - with style dropzone //TODO
+    item.ondragstart = (evt) => {
+      current = item;
+      for (let it of items) {
+        if (it != current) { it.classList.add("hint"); }
+      }
+    };
+
+    // 3 - Drag enter - with style dropzone //TODO
+    item.ondragenter = (evt) => {
+      if (item != current) { item.classList.add("active"); }
+    };
+
+    // 4 - Drag leave - remove style dropzone //TODO
+    item.ondragleave = () => {
+      item.classList.remove("active");
+    };
+    
+    // 5 - Drag end - remove all highlights
+    item.ondragend = () => { 
+      for (let it of items ) {
+        it.classList.remove("hint");
+        it.classList.remove("active");
+      }
+    };
+    
+    // 6 - Drag over - prevent the default "drop"
+    item.ondragover = (evt) => { evt.preventDefault(); }
+
+    // 7 - On drop - do something
+    item.ondrop = (evt) => {
+      evt.preventDefault();
+      if (item != current) {
+        let currentPos = 0, droppedPos = 0;
+        for (let it = 0; it < items.length; it++) {
+          if (current == items[it]) { currentPos = it; }
+          if (i = items[it]) { droppedPos = it; }
+        }
+        if (currentPos < droppedPos) {
+          item.parentNode.insertBefore(current, item.nextSibling);
+        } else {
+          item.parentNode.insertBefore(current, item);
+        }
+      }
+    };
+  };
 };
 
 // To mark a task as complete
@@ -125,3 +182,8 @@ const switchTheme = (evt) => {
 
 // Event listener to the theme toggle
 themeToggle.addEventListener("change", switchTheme, false);
+
+// Drag and Drop 
+window.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("sortlist");
+});
