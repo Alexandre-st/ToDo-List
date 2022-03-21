@@ -111,63 +111,49 @@ li.taskDone {
 }
 
 // Design for button (All / Active / Completed)
-.filter {
-  margin-top: 1.6rem;
-  font-size: 1.4rem;
-  line-height: 1.4rem;
-  font-weight: 700;
-  letter-spacing: -0.194444px;
+.action {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.6rem 2rem 2rem 2rem;
   color: var(--button-color);
-  box-shadow: 0px 35px 50px -15px var(--shadow);
+  position: relative;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  letter-spacing: -0.166667px;
 
   @include mq(tablet) {
-    display: none;
+    padding: 1.6rem 2.4rem;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
   }
 
-  &-content {
+  &-filter {
+    position: absolute;
+    top: 5.1em;
+    right: 0;
+    left: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 1.9rem;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    font-weight: 700;
+    padding: 1.5rem 0;
     height: 4.8rem;
     background-color: var(--bg-list);
+    letter-spacing: -0.194444px;
     border-radius: 5px;
+    box-shadow: 0px 35px 50px -15px var(--shadow);
 
     button:hover {
       color: #3a7cfd;
     }
-  }
-}
-
-.action {
-  &-mobile {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.2rem;
-    line-height: 1.2rem;
-    letter-spacing: -0.166667px;
-    padding: 0 2rem;
-    color: var(--button-color);
-    height: 5rem;
 
     @include mq(tablet) {
-      font-size: 1.4rem;
-      line-height: 1.4rem;
-      letter-spacing: -0.194444px;
+      position: initial;
+      box-shadow: none;
+      height: 0;
+      padding: 0;
     }
-  }
-
-  &-desktop {
-    display: none;
-
-    @include mq(tablet) {
-      display: block;
-      font-weight: 700;
-    }
-  }
-
-  &-h2 {
-    cursor: pointer;
   }
 }

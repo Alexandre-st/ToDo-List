@@ -3,8 +3,9 @@ const themeToggle = document.querySelector('.theme-switch input[type="checkbox"]
 const form = document.querySelector('form');
 const list = document.querySelector('.list');
 const input = document.querySelector('form input');
-const completedTask = document.querySelector('.action-h2');
-const allFilter = document.querySelector('.filter-content .all');
+const task = document.querySelector('list-item');
+const completedTask = document.querySelector('.action-button');
+const allFilter = document.querySelector('.all');
 const activeFilter = document.querySelector('.active');
 const completedFilter = document.querySelector('completed');
 const itemsNumber = document.querySelector('.action-p');
@@ -167,6 +168,35 @@ const showItems = () => {
 };
 
 showItems();
+
+// To filter Active items
+// const active = () => {
+//   checkbox = document.querySelectorAll('.list-check input[type="checkbox"]');
+//   for (let i = 0; i < checkbox.length; i++) {
+//     if (checkbox[i].checked) {
+//       checkbox[i].parentNode.parentNode.style.display = 'none';
+//     } else {
+//       checkbox[i].parentNode.parentNode.style.display = 'flex';
+//     }
+//   };
+//   task.classList('')
+// };
+
+// activeFilter.addEventListener('click', active);
+
+// To filter Completed Items
+// const completed = () => {
+//   checkbox = document.querySelectorAll('.list-check input[type="checkbox"]');
+//   for (let i = 0; i < checkbox.length; i++) {
+//     if (checkbox[i].checked) {
+//       checkbox[i].parentNode.parentNode.style.display = 'flex';
+//     } else {
+//       checkbox[i].parentNode.parentNode.style.display = 'none';
+//     }
+//   };
+// };
+
+// completedFilter.addEventListener('click', completed);
 
 // To delete all the tasks who are marked as completed
 completedTask.addEventListener('click', evt => {
