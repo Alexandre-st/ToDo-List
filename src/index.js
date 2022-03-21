@@ -1,7 +1,7 @@
 // Get the theme toggle
 const themeToggle = document.querySelector('.theme-switch input[type="checkbox"]');
 const form = document.querySelector('form');
-const list = document.querySelector('ul');
+const list = document.querySelector('.list');
 const input = document.querySelector('form input');
 const completedTask = document.querySelector('.action-h2');
 const allFilter = document.querySelector('.filter-content .all');
@@ -37,9 +37,9 @@ const showList = (todo) => {
   // Create the li (item)
   const item = document.createElement('li');
   // To let the item draggable
-  item.draggable = true;
   item.classList.add('list-item');
   item.setAttribute('data-key', todo.id);
+  item.draggable = true;
 
   // Create the checkbox with label to hide the checkbox
   const label = document.createElement('label');
@@ -135,6 +135,8 @@ const showList = (todo) => {
 // To mark a task as complete
 const taskDone = (evt) => {
   evt.target.parentNode.parentNode.classList.toggle('taskDone');
+
+  showItems();
 };
 
 // To delete a task
@@ -150,11 +152,17 @@ const deleteTask = (evt) => {
 };
 
 // To show how many task
-const showItems = (item) => {
-  if (list.getElementsByTagName('li').length <= 1) {
-    itemsNumber.innerText = `${list.getElementsByTagName('li').length} item left`;
+const showItems = () => {
+  const items = list.getElementsByTagName('li').length;
+  const completedItems = Array.from(list.children).filter((task) => 
+    task.classList.contains('taskDone')
+  ).length;
+  
+  const totalItems = items - completedItems;
+  if (totalItems <= 1) {
+    itemsNumber.innerText = `${totalItems} item left`;
   } else {
-    itemsNumber.innerText = `${list.getElementsByTagName('li').length} items left`;
+    itemsNumber.innerText = `${totalItems} items left`;
   }
 };
 
@@ -166,8 +174,9 @@ completedTask.addEventListener('click', evt => {
   allTask.forEach(elt => {
     if (elt === document.querySelector('.taskDone')) {
       elt.remove();
-      showItems();
     }
+  
+    showItems();
   });
 });
 
