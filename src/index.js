@@ -7,7 +7,7 @@ const task = document.querySelector('list-item');
 const completedTask = document.querySelector('.action-button');
 const allFilter = document.querySelector('.all');
 const activeFilter = document.querySelector('.active');
-const completedFilter = document.querySelector('completed');
+const completedFilter = document.querySelector('.completed');
 const itemsNumber = document.querySelector('.action-p');
 let allTask = [];
 
@@ -85,7 +85,7 @@ const showList = (todo) => {
   for (let item of items) {
     item.draggable = true;
 
-    // 2 - Drag start - with style dropzone //TODO
+    // 2 - Drag start - with style dropzone 
     item.ondragstart = (evt) => {
       current = item;
       for (let it of items) {
@@ -93,18 +93,18 @@ const showList = (todo) => {
       }
     };
 
-    // 3 - Drag enter - with style dropzone //TODO
+    // 3 - Drag enter - with style dropzone 
     item.ondragenter = (evt) => {
       if (item != current) { item.classList.add("active"); }
     };
 
-    // 4 - Drag leave - remove style dropzone //TODO
+    // 4 - Drag leave - remove style dropzone 
     item.ondragleave = () => {
       item.classList.remove("active");
     };
     
     // 5 - Drag end - remove all highlights
-    item.ondragend = () => { 
+    item.ondragend = () => { 
       for (let it of items ) {
         it.classList.remove("hint");
         it.classList.remove("active");
@@ -119,7 +119,7 @@ const showList = (todo) => {
       evt.preventDefault();
       if (item != current) {
         let currentPos = 0, droppedPos = 0;
-        for (let it = 0; it < items.length; it++) {
+        for (let it = 0; it < items.length; it++) {
           if (current == items[it]) { currentPos = it; }
           if (i = items[it]) { droppedPos = it; }
         }
@@ -170,33 +170,54 @@ const showItems = () => {
 showItems();
 
 // To filter Active items
-// const active = () => {
-//   checkbox = document.querySelectorAll('.list-check input[type="checkbox"]');
-//   for (let i = 0; i < checkbox.length; i++) {
-//     if (checkbox[i].checked) {
-//       checkbox[i].parentNode.parentNode.style.display = 'none';
-//     } else {
-//       checkbox[i].parentNode.parentNode.style.display = 'flex';
-//     }
-//   };
-//   task.classList('')
-// };
+const active = () => {
+  checkbox = document.querySelectorAll('.list-check input[type="checkbox"]');
+  for (let i = 0; i < checkbox.length; i++) {
+    if (checkbox[i].checked) {
+      checkbox[i].parentNode.parentNode.style.display = 'none';
+    } else {
+      checkbox[i].parentNode.parentNode.style.display = 'flex';
+    }
+  };
+  // document.querySelector('.active').classList.remove('active');
+  document.querySelector('.active').classList.add('active');
+};
 
-// activeFilter.addEventListener('click', active);
+// Add the event 
+activeFilter.addEventListener('click', active);
 
 // To filter Completed Items
-// const completed = () => {
-//   checkbox = document.querySelectorAll('.list-check input[type="checkbox"]');
-//   for (let i = 0; i < checkbox.length; i++) {
-//     if (checkbox[i].checked) {
-//       checkbox[i].parentNode.parentNode.style.display = 'flex';
-//     } else {
-//       checkbox[i].parentNode.parentNode.style.display = 'none';
-//     }
-//   };
-// };
+const completed = () => {
+  checkbox = document.querySelectorAll('.list-check input[type="checkbox"]');
+  for (let i = 0; i < checkbox.length; i++) {
+    if (checkbox[i].checked) {
+      checkbox[i].parentNode.parentNode.style.display = 'flex';
+    } else {
+      checkbox[i].parentNode.parentNode.style.display = 'none';
+    }
+  };
+  document.querySelector('.active').classList.remove('active');
+  document.querySelector('.completed').classList.add('active');
 
-// completedFilter.addEventListener('click', completed);
+  showItems();
+};
+
+// Add the event 
+completedFilter.addEventListener('click', completed);
+
+// To show all the tasks
+const all = () => {
+  checkbox = document.querySelectorAll('.list-check input[type="checkbox"]');
+
+  for (let i = 0; i < checkbox.length; i++) {
+    checkbox[i].parentNode.parentNode.style.display = 'flex';
+  };
+
+  document.querySelector(".active").classList.remove("active");
+  document.querySelector(".all").classList.add("active");
+};
+
+allFilter.addEventListener('click', all);
 
 // To delete all the tasks who are marked as completed
 completedTask.addEventListener('click', evt => {
