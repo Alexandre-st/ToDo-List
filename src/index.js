@@ -1,9 +1,9 @@
 // Get the theme toggle
 const themeToggle = document.querySelector('.theme-switch input[type="checkbox"]');
+// Selectors
 const form = document.querySelector('form');
 const list = document.querySelector('.list');
 const input = document.querySelector('form input');
-const task = document.querySelector('list-item');
 const completedTask = document.querySelector('.action-button');
 const allFilter = document.querySelector('.all');
 const activeFilter = document.querySelector('.active');

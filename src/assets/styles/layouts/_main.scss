@@ -34,6 +34,7 @@
         font-size: 1.2rem;
         line-height: 1.2rem;
         letter-spacing: -0.166667px;
+
         @include mq(tablet) {
           font-size: 1.8rem;
           line-height: 1.8rem;
@@ -99,7 +100,7 @@
 li.taskDone {
   p {
     text-decoration: line-through;
-    color: #d1d2da;
+    color: var(--color-done);
   }
 
   .circle {
@@ -107,6 +108,21 @@ li.taskDone {
       linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
     background-position: center;
     background-repeat: no-repeat;
+  }
+}
+@include mq(tablet) {
+  li button.list-item-cross {
+    display: none;
+  }
+
+  li:hover {
+    button.list-item-cross {
+      display: block;
+    }
+
+    p {
+      cursor: pointer;
+    }
   }
 }
 

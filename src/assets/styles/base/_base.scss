@@ -32,7 +32,9 @@ body {
     height: 2.4rem;
   }
 
-  //TODO
-  // &:hover {
-  // }
+  &:hover {
+    background: linear-gradient(var(--bg-list), var(--bg-list)) padding-box,
+      linear-gradient(to bottom right, #57ddff, #c058f3) border-box;
+    border: 1px solid transparent;
+  }
 }
