@@ -121,7 +121,7 @@ const showList = (todo) => {
         let currentPos = 0, droppedPos = 0;
         for (let it = 0; it < items.length; it++) {
           if (current == items[it]) { currentPos = it; }
-          if (i = items[it]) { droppedPos = it; }
+          if (it = items[it]) { droppedPos = it; }
         }
         if (currentPos < droppedPos) {
           item.parentNode.insertBefore(current, item.nextSibling);
@@ -171,7 +171,7 @@ showItems();
 
 // To filter Active items
 const active = () => {
-  checkbox = document.querySelectorAll('.list-check input[type="checkbox"]');
+  const checkbox = document.querySelectorAll('.list-check input[type="checkbox"]');
   for (let i = 0; i < checkbox.length; i++) {
     if (checkbox[i].checked) {
       checkbox[i].parentNode.parentNode.style.display = 'none';
@@ -188,7 +188,8 @@ activeFilter.addEventListener('click', active);
 
 // To filter Completed Items
 const completed = () => {
-  checkbox = document.querySelectorAll('.list-check input[type="checkbox"]');
+  const checkbox = document.querySelectorAll('.list-check input[type="checkbox"]');
+
   for (let i = 0; i < checkbox.length; i++) {
     if (checkbox[i].checked) {
       checkbox[i].parentNode.parentNode.style.display = 'flex';
@@ -207,7 +208,7 @@ completedFilter.addEventListener('click', completed);
 
 // To show all the tasks
 const all = () => {
-  checkbox = document.querySelectorAll('.list-check input[type="checkbox"]');
+  const checkbox = document.querySelectorAll('.list-check input[type="checkbox"]');
 
   for (let i = 0; i < checkbox.length; i++) {
     checkbox[i].parentNode.parentNode.style.display = 'flex';

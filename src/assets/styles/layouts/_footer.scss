@@ -1,11 +1,14 @@
+@use "../variables" as *;
+
 .footer {
   text-align: center;
   margin-top: 4rem;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  letter-spacing: -0.194444px;
+  color: var(--button-color);
 
-  &-p {
-    font-size: 1.4rem;
-    line-height: 1.4rem;
-    letter-spacing: -0.194444px;
-    color: var(--button-color);
+  @include mq(tablet) {
+    margin-top: 4.9rem;
   }
 }
