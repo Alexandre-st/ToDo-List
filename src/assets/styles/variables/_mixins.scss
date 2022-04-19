@@ -6,3 +6,13 @@
     }
   }
 }
+
+@mixin basetext-mobile {
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+}
+
+@mixin basetext-desktop {
+  font-size: 1.8rem;
+  line-height: 1.8rem;
+}

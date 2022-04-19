@@ -31,13 +31,11 @@
       &::placeholder,
       &:focus {
         color: var(--label-color);
-        font-size: 1.2rem;
-        line-height: 1.2rem;
+        @include basetext-mobile;
         letter-spacing: -0.166667px;
 
         @include mq(tablet) {
-          font-size: 1.8rem;
-          line-height: 1.8rem;
+          @include basetext-desktop;
           letter-spacing: -0.25px;
         }
       }
@@ -62,15 +60,13 @@
     padding-left: 2rem;
     border-bottom: 1px solid var(--border-bottom);
     color: var(--text-color);
-    font-size: 1.2rem;
-    line-height: 1.2rem;
+    @include basetext-mobile;
     letter-spacing: -0.166667px;
 
     @include mq(tablet) {
       height: 6.4rem;
       gap: 2.4rem;
-      font-size: 1.8rem;
-      line-height: 1.8rem;
+      @include basetext-desktop;
       letter-spacing: -0.25px;
     }
 
@@ -133,8 +129,7 @@ li.taskDone {
   padding: 1.6rem 2rem 2rem 2rem;
   color: var(--button-color);
   position: relative;
-  font-size: 1.2rem;
-  line-height: 1.2rem;
+  @include basetext-mobile;
   letter-spacing: -0.166667px;
 
   @include mq(tablet) {
