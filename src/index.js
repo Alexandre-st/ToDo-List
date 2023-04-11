@@ -9,7 +9,50 @@ const allFilter = document.querySelector('.all');
 const activeFilter = document.querySelector('.active');
 const completedFilter = document.querySelector('.completed');
 const itemsNumber = document.querySelector('.action-p');
-let allTask = [];
+
+let todoList;
+
+if (localStorage.getItem("todoList") === null) {
+  localStorage.setItem(
+    "todoList",
+    JSON.stringify([
+      {
+        name: "Complete online JavaScript course",
+        completed: true,
+        id: Date.now(),
+      },
+      {
+        name: "Jog around the park 3x",
+        completed: false,
+        id: Date.now(),
+      },
+      {
+        name: "10 minutes meditation",
+        completed: false,
+        id: Date.now(),
+      },
+      {
+        name: "Read for 1 hour",
+        completed: false,
+        id: Date.now(),
+      },
+      {
+        name: "Pick up groceries",
+        completed: false,
+        id: Date.now(),
+      },
+      {
+        name: "Complete Todo App on Frontend Mentor",
+        completed: false,
+        id: Date.now(),
+      },
+    ])
+  );
+}
+
+todoList = JSON.parse(localStorage.getItem("todoList"));
+
+console.log(todoList);
 
 // To add a new task in the to do
 form.addEventListener('submit', evt => {
@@ -25,43 +68,49 @@ form.addEventListener('submit', evt => {
 
 // To add a task to the list
 const addTask = (text) => {
-  const todo = {
-    text,
-    id : Date.now(),
-  }
+  const todos = {
+    name: text,
+    completed: false,
+    id: Date.now(),
+  };
   // When the task is created, call the function to show the list
-  showList(todo);
+  todoList = [...todoList, todos];
+
+  localStorage.setItem("todoList", JSON.stringify(todoList));
+  // console.log(todos);
+  newTask(todos);
   showItems();
 };
 
-const showList = (todo) => {
+const newTask = (todos) => {
+  console.log(todos);
   // Create the li (item)
   const item = document.createElement('li');
   // To let the item draggable
   item.classList.add('list-item');
-  item.setAttribute('data-key', todo.id);
+  item.setAttribute('data-key', todos.id);
   item.draggable = true;
 
   // Create the checkbox with label to hide the checkbox
   const label = document.createElement('label');
   label.classList.add('list-check');
-  item.appendChild(label);
+  item.append(label);
   
   // Create the input with checkbox type
   const checkbox = document.createElement('input');
   checkbox.setAttribute('type', 'checkbox');
   checkbox.addEventListener('click', taskDone);
-  label.appendChild(checkbox);
+  label.append(checkbox);
   
   // Create the circle who is replacing the checkbox
   const circle = document.createElement('div');
   circle.classList.add('circle');
-  label.appendChild(circle);
+  label.append(circle);
   
   // Add the text
   const text = document.createElement('p');
-  text.innerText = todo.text;
-  item.appendChild(text);
+  text.innerText = todos.name;
+  item.append(text);
 
   // Button to delete the task
   const button = document.createElement('button');
@@ -72,12 +121,11 @@ const showList = (todo) => {
   const image = document.createElement('img');
   image.src = require('./assets/images/icon-cross.svg');
   image.setAttribute('alt', 'Cross');
-  button.appendChild(image);
-  item.appendChild(button);
+  button.append(image);
+  item.append(button);
 
   // Push to the allTask array.
-  list.appendChild(item);
-  allTask.push(item);
+  list.append(item);
   showItems();
 
   let items = document.getElementsByTagName('li'), current = null;
@@ -138,6 +186,12 @@ const taskDone = (evt) => {
   evt.target.parentNode.parentNode.classList.toggle('taskDone');
 
   showItems();
+};
+
+const showList = (todoList) => {
+  todoList.map((todos) => {
+    return newTask(todos);
+  });
 };
 
 // To delete a task
@@ -248,3 +302,5 @@ themeToggle.addEventListener("change", switchTheme, false);
 window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("sortlist");
 });
+
+showList(todoList);
